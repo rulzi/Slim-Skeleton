@@ -18,7 +18,7 @@
 - [Vlucas Valitron Validator](https://github.com/vlucas/valitron)
 - [Vlucas phpdotenv](https://github.com/vlucas/phpdotenv)
 
-### Instalasi
+### Installation
 
 1) Create Project
 ```
