@@ -20,28 +20,28 @@
 
 ### Instalasi
 
-1) Clone repo
+1) Create Project
 ```
-$ git clone https://github.com/choirulafandi/Slim-Skeleton [folder-name]
+$ composer create-project -n -s dev choirulafandi/slim-skeleton my-app
 ```
-2) Masuk ke directory & install dependency
+2) install dependency
 
 ```
-$ cd [folder-name] && composer install
+$ composer install
 ```
-3) Init phinx migration dan edit migrations config di phinx.yml file
+3) Init phinx migration and edit migrations config at phinx.yml file
 ```
 $ php vendor/bin/phinx init
 ```
-4) Buat .env di project root dan setting environment mu
+4) Open .env in project root dan setting your environment
 ```
 $ cp .env.example .env
 ```
-5) Gunakan PHP built in server dan arahkan ke folder web sebagai docroot.
+5) use PHP built in server dan pointing to folder public as docroot.
 ```
-$ php -S  localhost:8080 -t web/
+$ php -S  localhost:8080 -t public/
 ```
-6) Terakhir, buka url sesuai dengan konfigurasi lokal server anda.
+6) Browse to http://localhost:8080
 
 ### Key Directory
 
