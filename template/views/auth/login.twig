@@ -1,0 +1,69 @@
+{% extends 'layout/app.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            {% if( flash.message('error') ) %}
+                <div class="alert alert-danger" role="alert">
+                    {{ flash.message('error')[0] }}
+                </div>
+            {% endif %}
+
+            {% if( csrf_error ) %}
+                <div class="alert alert-danger" role="alert">
+                    Failed CSRF check!
+                </div>
+            {% endif %}
+
+            {% if( errors ) %}
+                <div class="alert alert-danger" role="alert">
+                    Missing Field Required
+                </div>
+            {% endif %}
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Register</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ path_for('login') }}">
+                        <input type="hidden" name="{{ nameKey }}" value="{{ name }}">
+                        <input type="hidden" name="{{ valueKey }}" value="{{ value }}">
+
+                        <div class="form-group{{ errors.email ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Email</label>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" name="email" value="{{ old.email }}">
+                                {% if errors.email %}
+                                    <span class="help-block">
+                                        <strong>{{ errors.email[0] }}</strong>
+                                    </span>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ errors.password ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Password</label>
+                            <div class="col-md-6">
+                                <input type="password" class="form-control" name="password" value="">
+                                {% if errors.password %}
+                                    <span class="help-block">
+                                        <strong>{{ errors.password[0] }}</strong>
+                                    </span>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-user"></i>Login
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

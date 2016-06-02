@@ -1,0 +1,5 @@
+vendor/
+phinx.yml
+.env
+logs/*
+!/logs/README.md
