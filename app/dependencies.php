@@ -5,10 +5,10 @@ use Slim\Handlers\Error as SlimError;
 $container = $app->getContainer();
 
 //Error Handle
-$container['errorHandler'] = function ($container) {
-    if ($container->get('settings')['mode'] !== 'development') {
-        return function ($request, $response, $exception) use ($container) {
-            return $container->get('view')->render('errors/500', [
+$container['errorHandler'] = function ($c) {
+    if ($c->get('settings')['mode'] !== 'development') {
+        return function ($request, $response, $exception) use ($c) {
+            return $c->get('view')->render('errors/500', [
                 'message' => $exception->getMessage()
             ])->withStatus(500);
         };
