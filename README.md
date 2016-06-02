@@ -32,11 +32,15 @@ $ php vendor/bin/phinx init
 ```
 $ cp .env.example .env
 ```
-4) use PHP built in server dan pointing to folder public as docroot.
+4) chmod folder logs
+```
+$ sudo chmod -R 777 logs
+```
+5) use PHP built in server dan pointing to folder public as docroot.
 ```
 $ php -S  localhost:8080 -t public/
 ```
-5) Browse to http://localhost:8080
+6) Browse to http://localhost:8080
 
 ### Key Directory
 
