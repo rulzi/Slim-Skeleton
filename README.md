@@ -24,24 +24,19 @@
 ```
 $ composer create-project -n -s dev choirulafandi/slim-skeleton my-app
 ```
-2) install dependency
-
-```
-$ composer install
-```
-3) Init phinx migration and edit migrations config at phinx.yml file
+2) Init phinx migration and edit migrations config at phinx.yml file
 ```
 $ php vendor/bin/phinx init
 ```
-4) Open .env in project root dan setting your environment
+3) Open .env in project root dan setting your environment
 ```
 $ cp .env.example .env
 ```
-5) use PHP built in server dan pointing to folder public as docroot.
+4) use PHP built in server dan pointing to folder public as docroot.
 ```
 $ php -S  localhost:8080 -t public/
 ```
-6) Browse to http://localhost:8080
+5) Browse to http://localhost:8080
 
 ### Key Directory
 
