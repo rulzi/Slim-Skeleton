@@ -54,6 +54,12 @@ $container['view'] = function ($c) {
         $c['request']->getUri()
     ));
 
+    $asset = new Twig_SimpleFunction('asset', function ($path) use ($c) {
+        return $c['request']->getUri()->getBaseUrl().'/'.$path;
+    });
+
+    $view->getEnvironment()->addFunction($asset);
+
     return $view;
 };
 
