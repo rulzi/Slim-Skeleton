@@ -2,7 +2,7 @@
 
 ### Requirements
 
-- PHP 5.5.9 or newer.
+- PHP 7.0 or newer.
 - HTTP Server, Apache.
 - MySQL Server 5.x or newer.
 
